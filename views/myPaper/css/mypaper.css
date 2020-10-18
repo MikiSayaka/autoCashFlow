@@ -1,0 +1,20 @@
+body {
+  margin-top: 10px;
+}
+
+.sample-list {
+  margin-top: 10px;
+}
+
+.sample-list li {
+  cursor: pointer;
+}
+
+.show-photo {
+  margin-top: 10px;
+}
+
+.show-photo div img {
+  width: 300px;
+  height: 300px;
+}

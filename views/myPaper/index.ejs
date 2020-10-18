@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Joseph paper</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/mypaper.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-3">Upload sample photo</h1>
+          <form method="POST" action="/myPaper" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="samplePhoto">Upload your sample photo</label>
+              <input type="file" id="samplePhoto" name="samplePhoto" class="form-control-file">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sampleType" id="labeled" value="1" checked>
+              <label class="form-check-label" for="labeled">Sample with label</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sampleType" id="unlabeled" value="0">
+              <label class="form-check-label" for="unlabeled">Sample without label</label>
+            </div>
+            <div class="form-check">
+              <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row sample-list">
+        <div class="col">
+          <ul class="list-group label">
+            <% labeled_samples.forEach(function(_labeledItem) {%>
+            <li class="list-group-item"><%= _labeledItem %></li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group unlabel">
+            <% unlabel_samples.forEach(function(_unlabelItem) {%>
+            <li class="list-group-item"><%= _unlabelItem %></li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+      <div class="row show-photo">
+        <div class="col text-center">
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/mypaper.js"></script>
+</html>
