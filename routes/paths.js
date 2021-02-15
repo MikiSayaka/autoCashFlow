@@ -10,10 +10,6 @@ router.get('/', function(req, res, next){
   if (_url == '') {
     res.send('Hello World!');
   } else {
-    //  res.render( _url.replace('/', '') + '/index', {
-    //    labeled_samples: new Array(),
-    //    unlabel_samples: new Array()
-    //  });
     var _labelPath = path.join(__dirname, '../sample/', 'label/');
     var _unLabelPath = path.join(__dirname, '../sample/', 'unlabel/');
     fs.readdir(_labelPath, function(err, files){
@@ -39,7 +35,7 @@ router.post('/', upload.single('samplePhoto'), function(req, res, next){
   fs.rename(_tmpPath, ((req.body.sampleType == 1) ? _labelPath : _unLabelPath) + _fileName , function(err){
     var _labelPhoto = new Array();
     var _unlabelPhoto = new Array();
-    if (err != null) {
+    if (err == null) {
       fs.readdir(_labelPath, function(err, files){
         _labelPhoto = files;
         fs.readdir(_unLabelPath, function(err, files){
@@ -51,6 +47,7 @@ router.post('/', upload.single('samplePhoto'), function(req, res, next){
         });
       });
     } else {
+      console.log('Error occur, because of ' + err);
       res.render( _url.replace('/', '') + '/index', {
         labeled_samples: new Array(),
         unlabel_samples: new Array()

@@ -33,14 +33,22 @@
         <div class="col">
           <ul class="list-group label">
             <% labeled_samples.forEach(function(_labeledItem) {%>
-            <li class="list-group-item"><%= _labeledItem %></li>
+            <li class="list-group-item">
+              <input type="button" value="DEL" class="btn btn-danger del">
+              <input type="button" value="GET INFO" class="btn btn-info info">
+              <span><%= _labeledItem %></span>
+            </li>
             <% }); %>
           </ul>
         </div>
         <div class="col">
           <ul class="list-group unlabel">
             <% unlabel_samples.forEach(function(_unlabelItem) {%>
-            <li class="list-group-item"><%= _unlabelItem %></li>
+            <li class="list-group-item">
+              <input type="button" value="DEL" class="btn btn-danger del">
+              <input type="button" value="GET INFO" class="btn btn-info info">
+              <span><%= _unlabelItem %></span>
+            </li>
             <% }); %>
           </ul>
         </div>

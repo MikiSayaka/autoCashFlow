@@ -18,7 +18,7 @@ function moveMyPaperCSSLib() {
 }
 
 function createSampleFolder() {
-  return src('*.*', {read: false}).pipe(dest('./sample/unlabel')).pipe(dest('./sample/label'));
+  return src('*.*', {read: false}).pipe(dest('./sample/unlabel')).pipe(dest('./sample/label')).pipe(dest('./log'));
 }
 
 exports.default = series(moveMyPaperJSLib, moveMyPaperCSSLib, createSampleFolder);

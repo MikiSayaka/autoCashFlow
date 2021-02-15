@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Cart for mobile net</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/cam.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <video autoplay playsinline muted id="webcam" width="240" height="240"></video>
+        </div>
+      </div>
+      <div class="row">
+        <div id="console" class="col result-area">
+          <div id="status"></div>
+          <div id="prediction"><span id="name"></span>&nbsp;<span id="probability"></span></div>
+        </div>
+        <div id="btnArea" class="col button-area">
+          <button type="button" class="btn btn-primary" id="checkObj">Check Object</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--  Load from CDN  -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/cam.js"></script>
+</html>
+
