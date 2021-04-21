@@ -49,12 +49,12 @@ const start = async() => {
     let datasets = await classifierModel.getClassifierDataset();
     let datasetObject = {};
 
-    Object.keys(datasets).forEach(async (key) => {
-      let data = await datasets[key].dataSync();
+    Object.keys(datasets).forEach((key) => {
+      let data = datasets[key].dataSync();
       datasetObject[key] = Array.from(data);
     });
 
-    let jsonModel = JSON.stringify(datasetObject);
+    let ljsonModel = JSON.stringify(datasetObject);
     let downloader = document.createElement('a');
     downloader.download = 'Model.json';
     downloader.href = 'data:text/text;charset=utf-8,' + encodeURIComponent(jsonModel);
@@ -94,6 +94,7 @@ const start = async() => {
     saveClassifier(classifierModel);
   };
 
+  //  FIXME here
   const addDatasetClass = async (classId) => {
     console.log('Add dataset');
     const capturedImage = await webcamInput.capture();
@@ -102,6 +103,7 @@ const start = async() => {
     capturedImage.dispose();
   };
 
+  //  FIXME here
   const imageClassificationWithTransferLearningOnWebcam = async () => {
     console.log('Classification image from webcam');
     while(true){

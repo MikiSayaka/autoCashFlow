@@ -11,18 +11,92 @@
           <video autoplay playsinline muted id="webcam" width="240" height="240"></video>
         </div>
       </div>
-      <div class="row">
-        <div id="console" class="col result-area">
-          <div id="status"></div>
-          <div id="prediction"><span id="name"></span>&nbsp;<span id="probability"></span></div>
+      <hr>
+      <form id="model-form">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="form-label" for="model-list">Model list</label>
+              <select class="form-control" id="model-list">
+                <option selected>None</option>
+              </select>
+              <div class="form-text">Please select the model in the storage.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="model-name">Model name</label>
+              <input class="form-control"type="text" id="model-name">
+              <div class="form-text">Please input the model when you want to create a new model.</div>
+            </div>
+          </div>
         </div>
-        <div id="btnArea" class="col button-area">
-          <!--<button type="button" class="btn btn-warning" id="class-n">Add N</button>-->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="form-label" for="classify-list">Classify item list</label>
+              <select class="form-control" id="classify-list">
+                <option selected>None</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="form-label" for="classify-name">Classify item label No.</label>
+              <input class="form-control"type="text" id="classify-number">
+              <div class="form-text">Please input the classify item number(barcode number)</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="form-label" for="classify-name">Classify item name</label>
+              <input class="form-control"type="text" id="classify-name">
+              <div class="form-text">Please input the classify item name</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="form-label" for="classify-name">Classify item price</label>
+              <input class="form-control"type="text" id="classify-price">
+              <div class="form-text">Please input the classify item price</div>
+            </div>
+          </div>
+        </div>
+        <div class="row button-area">
+          <div class="col">
+            <button type="button" id="add-model" class="btn btn-primary">Add Model</button>
+            <button type="button" id="remove-model" class="btn btn-danger">Remove Model</button>
+            <button type="button" id="add-classify" class="btn btn-primary">Add classify item</button>
+            <button type="button" id="remove-classify" class="btn btn-danger">Remove classify item</button>
+            <button type="button" id="save-classifydata" class="btn btn-primary">Save classify data</button>
+          </div>
+        </div>
+        <div class="row button-area">
+          <div class="col">
+            <button type="button" id="train" class="btn btn-info">Training</button>
+            <button type="button" id="classify" class="btn btn-success">Classify</button>
+            <input type="file" access=".json" id="load">
+          </div>
+        </div>
+      <form>
+      <hr>
+      <div id="console" class="row">
+        <div id="status" class="col-4"></div>
+        <div id="action" class="col-4"></div>
+        <div id="prediction" class="col-4"><span id="name"></span>&nbsp;<span id="probability"></span></div>
+      </div>
+      <div class="row">
+        <div id="controlArea" class="col button-area">
+          <!--
           <button type="button" class="btn btn-warning" id="class-a">Add A</button>
           <button type="button" class="btn btn-warning" id="class-b">Add B</button>
           <button type="button" class="btn btn-warning" id="class-c">Add C</button>
           <button type="button" class="btn btn-primary" id="save">Save</button>
-          <button type="button" class="btn btn-success" id="load">Load</button>
+          <input type="file" access=".json" id="load">
+          -->
         </div>
       </div>
     </div>

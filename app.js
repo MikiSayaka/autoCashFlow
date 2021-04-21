@@ -19,6 +19,7 @@ app.use(express.static('sample'));
 app.use(express.static('views/cart'));
 app.use(express.static('views/cam'));
 app.use(express.static('views/train'));
+app.use(express.static('views/test'));
 
 //  TODO  Page router
 app.use('/', paths);
@@ -26,6 +27,7 @@ app.use('/', paths);
 app.use('/cart', paths);
 app.use('/cam', paths);
 app.use('/train', paths);
+app.use('/test', paths);
 
 //  TODO  API
 app.use('/restFulAPI', restFulAPI);
